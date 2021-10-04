@@ -28,7 +28,8 @@ const ConductTraction =()=>{
     const conductTransaction =()=>{
         axios.post('/api/transact',{recipient, amount})
         .then(res=>{
-            alert(res.message || res.type)
+          console.log('res',res)
+            alert(res.data.message || res.data.type)
             history.push('/transaction-pool');
         })
     }
